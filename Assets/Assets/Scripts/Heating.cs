@@ -21,24 +21,19 @@ public class Heating : MonoBehaviour{
             _ingot.material.SetColor("_Color", Color.yellow);
         }
 
-        if (_timer <= 0 && _heating){
+        if (_timer <= 0 && _heating && !_heated){
             _heating = false;
             _heated = true;
             _timer = 0;
-        }
-
-        if (_heated){
             _ingot.material.SetColor("_Color", Color.red);
         }
     }
 
     public void OnFurnace(){
-        Debug.Log("Esquentando");
         _heating = true;
     }
     
     public void OffFurnace(){
-        Debug.Log("Parando de Esquentar");
         _heating = false;
     }
 

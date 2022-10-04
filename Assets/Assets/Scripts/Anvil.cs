@@ -3,17 +3,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Anvil : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class Anvil : MonoBehaviour{
+    
+    private void OnCollisionStay(Collision collisionInfo){
+        var objectColision = collisionInfo.gameObject;
+        if (objectColision.CompareTag("Ingot")){
+            objectColision.GetComponent<Hammering>().OnAnvil();
+        }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    
+    private void OnCollisionExit(Collision collisionInfo){
+        var objectColision = collisionInfo.gameObject;
+        if (objectColision.CompareTag("Ingot")){
+            objectColision.GetComponent<Hammering>().OffAnvil();
+        }
     }
 }
