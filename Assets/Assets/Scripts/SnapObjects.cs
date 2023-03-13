@@ -14,7 +14,8 @@ public class SnapObjects : MonoBehaviour{
                 Vector3 ingotP = other.gameObject.transform.position;
                 Quaternion ingotR = other.gameObject.transform.rotation;
                 transform.position = ingotP;
-                transform.rotation = Quaternion.Lerp(transform.rotation, ingotR, Time.deltaTime);
+                transform.rotation = ingotR;
+                //transform.rotation = Quaternion.Lerp(transform.rotation, ingotR, Time.deltaTime);
             }
         }
     }
