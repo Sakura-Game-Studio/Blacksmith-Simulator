@@ -9,6 +9,7 @@ public class Furnace : MonoBehaviour{
         }
     }
     
+    
     private void OnCollisionExit(Collision collisionInfo){
         var objectColision = collisionInfo.gameObject;
         if (objectColision.CompareTag("Ingot")){

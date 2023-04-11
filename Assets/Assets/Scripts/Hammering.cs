@@ -35,6 +35,7 @@ public class Hammering : MonoBehaviour{
 
     public void OnAnvil(){
         _onAnvil = true;
+        Debug.Log("Na fornalha");
     }
     
     public void OffAnvil(){
