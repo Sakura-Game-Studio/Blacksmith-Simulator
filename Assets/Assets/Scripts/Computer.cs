@@ -16,7 +16,6 @@ public class Computer : MonoBehaviour {
             _contador = 0;
         }
         prefab = prefabs[_contador];
-        Debug.Log(prefab.name);
     }
     
     public void ChangePrefabLeft() {

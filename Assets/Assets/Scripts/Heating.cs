@@ -4,7 +4,7 @@ using UnityEngine;
 public class Heating : MonoBehaviour{
 
     private bool _heating = false;
-    private bool _heated = false;
+    [SerializeField] private bool _heated = false;
     private float _timer = 5f;
     private Renderer _ingot;
 

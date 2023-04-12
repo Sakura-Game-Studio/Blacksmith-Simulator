@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -10,6 +11,10 @@ public class Anvil : MonoBehaviour {
     [SerializeField] private BoxCollider craftAreaBoxCollider;
     [SerializeField] private Transform itemSpawnPoint;
     private CraftingRecipeSO _craftingRecipeSO;
+    private int _totalHits;
+
+    public TMP_Text textoReceita;
+    public Image imagemReceita;
 
     private void Awake() {
         NextRecipe();
@@ -23,7 +28,11 @@ public class Anvil : MonoBehaviour {
             index = (index + 1) % craftingRecipeSoList.Count;
             _craftingRecipeSO = craftingRecipeSoList[index];
         }
+
+        textoReceita.text = _craftingRecipeSO.name;
+        imagemReceita.sprite = _craftingRecipeSO.recipeSprite;
         
+        _totalHits = _craftingRecipeSO.totalHits;
         //_recipeImage.sprite = _craftingRecipeSO.recipeSprite;
     }
 
@@ -40,15 +49,22 @@ public class Anvil : MonoBehaviour {
         foreach (Collider collider in colliderArray){
             if (!collider.TryGetComponent(out ItemSOHolder itemSoHolder)) continue;
             if (!inputItemList.Contains(itemSoHolder.ItemSo)) continue;
+            if (!collider.GetComponent<Heating>().getHeated()) continue;
             inputItemList.Remove(itemSoHolder.ItemSo);
-            consumeItemsList.Add(collider.gameObject);
+                consumeItemsList.Add(collider.gameObject);
         }
 
         if (inputItemList.Count == 0){
-            Instantiate(_craftingRecipeSO.outputItemSO.prefab, itemSpawnPoint.position, itemSpawnPoint.rotation);
-
-            foreach (GameObject consumeItemsGameObject in consumeItemsList){
-                Destroy(consumeItemsGameObject);
+            if (_totalHits > 0){
+                _totalHits--;
+            }
+            if(_totalHits == 0){
+                _totalHits = _craftingRecipeSO.totalHits;
+                Instantiate(_craftingRecipeSO.outputItemSO.prefab, itemSpawnPoint.position, itemSpawnPoint.rotation);
+                
+                foreach (GameObject consumeItemsGameObject in consumeItemsList){
+                    Destroy(consumeItemsGameObject);
+                }
             }
         }
     }
@@ -59,6 +75,19 @@ public class Anvil : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.R)){
             NextRecipe();
+        }
+    }
+
+    private void OnTriggerStay(Collider other){
+        Collider[] colliderArray = Physics.OverlapBox(
+            transform.position + craftAreaBoxCollider.center, 
+            craftAreaBoxCollider.size,
+            craftAreaBoxCollider.transform.rotation);
+        
+        foreach (Collider collider in colliderArray){
+            if (collider.CompareTag("Hammer")){
+                CraftRecipe();
+            }
         }
     }
 }

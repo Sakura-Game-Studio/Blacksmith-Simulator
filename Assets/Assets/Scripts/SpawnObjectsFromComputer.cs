@@ -6,7 +6,6 @@ public class SpawnObjectsFromComputer : MonoBehaviour {
     private GameObject prefab;
 
     public void SpawnObjectFromComputer() {
-        Debug.Log("Teste");
         prefab = computer.GetPrefab();
         Vector3 posicao = positionSpawn.position;
         Instantiate(prefab, posicao, Quaternion.identity);

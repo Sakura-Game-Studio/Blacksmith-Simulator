@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d05e94c2f1690e9479194a92eadff0f3, type: 3}
-  m_Name: DaggerBlade
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  prefab: {fileID: 3542776908429467237, guid: 051ac24daf7d4ae4097c39539a404181, type: 3}
+  prefab: {fileID: 6120933349606772940, guid: 8d16131ea04c5964cba97dce7ce897af, type: 3}

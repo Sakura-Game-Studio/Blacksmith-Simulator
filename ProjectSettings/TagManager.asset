@@ -8,6 +8,9 @@ TagManager:
   - Ingot
   - Hammer
   - Dagger
+  - projectile
+  - Axe
+  - Sword
   layers:
   - Default
   - TransparentFX

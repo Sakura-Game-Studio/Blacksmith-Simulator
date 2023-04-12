@@ -11,9 +11,12 @@ public class Hammering : MonoBehaviour{
     private Renderer _ingot;
     private Heating _heating;
 
+    public Anvil anvil;
+
     private void Awake(){
         _ingot = GetComponent<Renderer>();
         _heating = GetComponent<Heating>();
+        anvil = FindObjectOfType<Anvil>();
     }
 
     private void Update(){
@@ -27,9 +30,7 @@ public class Hammering : MonoBehaviour{
     private void OnCollisionEnter(Collision collision){
         var objectColision = collision.gameObject;
         if (objectColision.CompareTag("Hammer")){
-            if (_hits > 0 && _onAnvil && _heating.getHeated()){
-                _hits--;
-            }
+            anvil.CraftRecipe();
         }
     }
 

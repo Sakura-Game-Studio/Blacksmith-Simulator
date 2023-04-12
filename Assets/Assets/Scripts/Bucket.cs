@@ -2,17 +2,17 @@ using System;
 using UnityEngine;
 
 public class Bucket : MonoBehaviour{
-    private void OnCollisionStay(Collision collisionInfo){
-        var objectColision = collisionInfo.gameObject;
-        if (objectColision.CompareTag("Dagger")){
+    private void OnTriggerStay(Collider other){
+        var objectColision = other.gameObject;
+        if (objectColision.CompareTag("Dagger") || objectColision.CompareTag("Axe") || objectColision.CompareTag("Sword")){
             objectColision.GetComponent<Cooling>().OnBucket();
             Debug.Log("No Balde");
         }
     }
 
-    private void OnCollisionExit(Collision other){
+    private void OnTriggerExit(Collider other){
         var objectColision = other.gameObject;
-        if (objectColision.CompareTag("Dagger")){
+        if (objectColision.CompareTag("Dagger") || objectColision.CompareTag("Axe") || objectColision.CompareTag("Sword")){
             objectColision.GetComponent<Cooling>().OffBucket();
             Debug.Log("Saiu do Balde");
         }
