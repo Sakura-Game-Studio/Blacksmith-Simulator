@@ -26,6 +26,14 @@ public class Check : MonoBehaviour{
 
     public void GetRequests(){
         requests.Clear();
+        itemsToCheck.Clear();
+        
+        for (int i = 0; i < 3; i++){
+            materiaisPedido1[i].SetActive(false);
+            materiaisPedido2[i].SetActive(false);
+        }
+        
+        
         requests.Add(craftingRecipeSoList[Random.Range(0, craftingRecipeSoList.Count)]);
         requests.Add(craftingRecipeSoList[Random.Range(0, craftingRecipeSoList.Count)]);
 
@@ -65,6 +73,7 @@ public class Check : MonoBehaviour{
             inputItemList.Remove(itemSoHolder.ItemSo);
             consumeItemsList.Add(collider.gameObject);
         }
+        
         
         if (inputItemList.Count == 0){
             foreach (GameObject consumeItemsGameObject in consumeItemsList){

@@ -6,7 +6,7 @@ public class Cooling : MonoBehaviour{
 
     private bool _cooling = false;
     private bool _heated = true;
-    private bool _chilled = false;
+    [SerializeField] private bool _chilled = false;
     private float _timer = 5f;
     private Renderer _itemRenderer;
     private Material[] _originalMaterials;
