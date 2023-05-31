@@ -232,6 +232,9 @@ namespace HurricaneVR.Framework.Core.Player
         protected virtual void Start()
         {
             Reset();
+            //CheckCameraMovement();
+            HandleHorizontalMovement();
+            HandleVerticalMovement();
         }
 
 

@@ -341,7 +341,6 @@ namespace HurricaneVR.Framework.ControllerInput
             if (Keyboard.current[Key.D].isPressed)
                 x += 1f;
 #endif
-
             return new Vector2(x, y);
         }
 

@@ -1,13 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.UI;
 
 public class Computer : MonoBehaviour {
     public List<GameObject> prefabs;
-    public GameObject prefab;
+    public List<Sprite> prefabsImages;
+    public Image imageComputer;
+    [FormerlySerializedAs("prefab")] public GameObject prefabAtual;
+    
     private int _contador = 0;
 
     private void Start() {
-        prefab = prefabs[_contador];
+        prefabAtual = prefabs[_contador];
+        imageComputer.sprite = prefabsImages[_contador];
     }
 
     public void ChangePrefabRight() {
@@ -15,7 +21,8 @@ public class Computer : MonoBehaviour {
         if (_contador > prefabs.Count - 1) {
             _contador = 0;
         }
-        prefab = prefabs[_contador];
+        prefabAtual = prefabs[_contador];
+        imageComputer.sprite = prefabsImages[_contador];
     }
     
     public void ChangePrefabLeft() {
@@ -23,11 +30,11 @@ public class Computer : MonoBehaviour {
         if (_contador < 0) {
             _contador = prefabs.Count-1;
         }
-        prefab = prefabs[_contador];
-        Debug.Log(prefab.name);
+        prefabAtual = prefabs[_contador];
+        imageComputer.sprite = prefabsImages[_contador];
     }
 
     public GameObject GetPrefab() {
-        return prefab;
+        return prefabAtual;
     }
 }

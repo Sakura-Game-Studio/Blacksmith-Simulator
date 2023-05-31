@@ -21,7 +21,7 @@ public class Check : MonoBehaviour{
     public List<GameObject> materiaisPedido2;
 
     private void Awake(){
-        GetRequests();
+        //GetRequests();
     }
 
     public void GetRequests(){
