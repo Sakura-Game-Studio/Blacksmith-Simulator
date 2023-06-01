@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -19,9 +20,40 @@ public class Check : MonoBehaviour{
     public TMP_Text textoPedido2;
     public Image imagePedido2;
     public List<GameObject> materiaisPedido2;
+    
+    public Image imagemCheck1, imagemCheck2;
+
+    private List<GameObject> consumeItemsList;
 
     private void Awake(){
         //GetRequests();
+        DesligarQuadroPedidos();
+    }
+
+    private void Update(){
+
+        CheckItens();
+        
+        if (consumeItemsList == null){
+            return;
+        }
+
+        switch (consumeItemsList.Count){
+            case 0:{
+                imagemCheck1.gameObject.SetActive(false);
+                imagemCheck2.gameObject.SetActive(false);
+                break;
+            }
+            case 1:{
+                imagemCheck1.gameObject.SetActive(true);
+                break;
+            }
+            case 2:{
+                imagemCheck1.gameObject.SetActive(true);
+                imagemCheck2.gameObject.SetActive(true);
+                break;
+            }
+        }
     }
 
     public void GetRequests(){
@@ -63,7 +95,7 @@ public class Check : MonoBehaviour{
             checkAreaBoxCollider.transform.rotation);
 
         List<ItemSO> inputItemList = new List<ItemSO>(itemsToCheck);
-        List<GameObject> consumeItemsList = new List<GameObject>();
+        consumeItemsList = new List<GameObject>();
         
         foreach (Collider collider in colliderArray){
             if (!collider.TryGetComponent(out ItemSOHolder itemSoHolder)) continue;
@@ -81,6 +113,21 @@ public class Check : MonoBehaviour{
                 Destroy(consumeItemsGameObject);
             }
             GetRequests();
+            DesligarQuadroPedidos();
         }
+    }
+
+    public void DesligarQuadroPedidos(){
+        textoPedido1.gameObject.SetActive(false);
+        textoPedido2.gameObject.SetActive(false);
+        imagePedido1.gameObject.SetActive(false);
+        imagePedido2.gameObject.SetActive(false);
+    }
+    
+    public void LigarQuadroPedidos(){
+        textoPedido1.gameObject.SetActive(true);
+        textoPedido2.gameObject.SetActive(true);
+        imagePedido1.gameObject.SetActive(true);
+        imagePedido2.gameObject.SetActive(true);
     }
 }
