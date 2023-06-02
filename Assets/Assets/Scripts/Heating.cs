@@ -18,14 +18,14 @@ public class Heating : MonoBehaviour{
         }
 
         if (_timer <= 2.5f && !_heated){
-            _ingot.material.SetColor("_Color", Color.yellow);
+            _ingot.material.SetColor("_BaseColor", Color.yellow);
         }
 
         if (_timer <= 0 && _heating && !_heated){
             _heating = false;
             _heated = true;
             _timer = 0;
-            _ingot.material.SetColor("_Color", Color.red);
+            _ingot.material.SetColor("_BaseColor", Color.red);
         }
     }
 

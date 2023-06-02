@@ -23,7 +23,7 @@ public class Hammering : MonoBehaviour{
         if (_hits == 0 && !_changed){
             _changed = true;
             _hits = 0;
-            _ingot.material.SetColor("_Color", Color.green);
+            _ingot.material.SetColor("_BaseColor", Color.green);
         }
     }
 

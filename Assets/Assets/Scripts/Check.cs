@@ -23,16 +23,17 @@ public class Check : MonoBehaviour{
     
     public Image imagemCheck1, imagemCheck2;
 
-    private List<GameObject> consumeItemsList;
+    public List<GameObject> consumeItemsList;
+    public List<ItemSO> inputItemList;
 
     private void Awake(){
-        //GetRequests();
-        DesligarQuadroPedidos();
+        GetRequests();
+        //DesligarQuadroPedidos();
     }
 
     private void Update(){
 
-        CheckItens();
+        ChecarItensBancada();
         
         if (consumeItemsList == null){
             return;
@@ -45,7 +46,14 @@ public class Check : MonoBehaviour{
                 break;
             }
             case 1:{
-                imagemCheck1.gameObject.SetActive(true);
+                if (consumeItemsList[0].gameObject.name == itemsToCheck[0].name){
+                    imagemCheck1.gameObject.SetActive(true);
+                    imagemCheck2.gameObject.SetActive(false);
+                }
+                else{
+                    imagemCheck1.gameObject.SetActive(false);
+                    imagemCheck2.gameObject.SetActive(true);
+                }
                 break;
             }
             case 2:{
@@ -59,7 +67,7 @@ public class Check : MonoBehaviour{
     public void GetRequests(){
         requests.Clear();
         itemsToCheck.Clear();
-        
+
         for (int i = 0; i < 3; i++){
             materiaisPedido1[i].SetActive(false);
             materiaisPedido2[i].SetActive(false);
@@ -86,27 +94,32 @@ public class Check : MonoBehaviour{
         foreach (CraftingRecipeSO receita in requests){
             itemsToCheck.Add(receita.outputItemSO);
         }
+        
+        LigarQuadroPedidos();
     }
 
-    public void CheckItens(){
+    public void ChecarItensBancada(){
         Collider[] colliderArray = Physics.OverlapBox(
             transform.position + checkAreaBoxCollider.center, 
-            checkAreaBoxCollider.size,
+            checkAreaBoxCollider.size / 2,
             checkAreaBoxCollider.transform.rotation);
-
-        List<ItemSO> inputItemList = new List<ItemSO>(itemsToCheck);
-        consumeItemsList = new List<GameObject>();
         
+        inputItemList = new List<ItemSO>(itemsToCheck);
+        consumeItemsList = new List<GameObject>();
+
         foreach (Collider collider in colliderArray){
             if (!collider.TryGetComponent(out ItemSOHolder itemSoHolder)) continue;
             if (!inputItemList.Contains(itemSoHolder.ItemSo)) continue;
             if (!collider.GetComponent<Cooling>().Get_Chilled()) continue;
             
+            Debug.Log(collider.gameObject);
+            
             inputItemList.Remove(itemSoHolder.ItemSo);
             consumeItemsList.Add(collider.gameObject);
         }
-        
-        
+    }
+
+    public void VenderItens(){
         if (inputItemList.Count == 0){
             foreach (GameObject consumeItemsGameObject in consumeItemsList){
                 Debug.Log(consumeItemsList);

@@ -21,7 +21,7 @@ public class Cooling : MonoBehaviour{
                 _materialBlade = material;
                 
                 _originalColor = _materialBlade.color;
-                _materialBlade.SetColor("_Color", Color.red);
+                _materialBlade.SetColor("_BaseColor", Color.red);
             }
         }
     }
@@ -32,7 +32,7 @@ public class Cooling : MonoBehaviour{
         }
 
         if (_timer <= 2.5f && _heated){
-            _materialBlade.SetColor("_Color", Color.yellow);
+            _materialBlade.SetColor("_BaseColor", Color.yellow);
         }
 
         if (_timer <= 0 && _cooling && _heated){
@@ -41,7 +41,7 @@ public class Cooling : MonoBehaviour{
             _chilled = true;
             _timer = 0;
             
-            _materialBlade.SetColor("_Color", _originalColor);
+            _materialBlade.SetColor("_BaseColor", _originalColor);
         }
     }
 
