@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class NPCDialogo : MonoBehaviour{
 
@@ -10,8 +10,10 @@ public class NPCDialogo : MonoBehaviour{
     public GameObject painelPreDialogo;
     public TMP_Text textoDialogo, textoNome;
     public string nome;
-    public string[] dialogo;
-    public GameObject aceitarBotao, rejeitarBotao;
+    public string[] dialogoAceitar;
+    public string[] dialogoEsperando;
+    public string[] dialogoAgradecendo;
+    public GameObject aceitarBotao;
     private int indice;
 
     public float velocidadeTexto;
@@ -20,10 +22,17 @@ public class NPCDialogo : MonoBehaviour{
 
     public Check check;
     
+    private string linhaAtual = "";
+    private string linha1 = "";
+    private string linha2 = "";
+    private string linha3 = "";
+    
     void Start(){
         painelPreDialogo.SetActive(true);
         textoNome.text = nome;
+        indice = 0;
         ResetarTexto();
+        SetDialogo();
     }
     
     void Update() {
@@ -36,29 +45,66 @@ public class NPCDialogo : MonoBehaviour{
             }
         }
 
-        if (textoDialogo.text == dialogo[indice]){
+        if (Input.GetKeyDown(KeyCode.T)){
+            interacaoNPC();
+        }
+
+        if (textoDialogo.text.Equals(linhaAtual) && indice == 0){
             aceitarBotao.SetActive(true);
-            rejeitarBotao.SetActive(true);
+        } else{
+            aceitarBotao.SetActive(false);
         }
     }
 
-    public void PedidoAceito(){
+    public void interacaoNPC(){
         ProximaLinha();
-        check.GetRequests();
+        if(indice == 1){
+            aceitarBotao.SetActive(false);
+            check.GetRequests();
+        }
     }
-    
+
+    public void botaoVenda(){
+        StartCoroutine(ResetarDialogo());
+    }
+
+    IEnumerator ResetarDialogo(){
+        ProximaLinha();
+        SetDialogo();
+        yield return new WaitForSeconds(5);
+        ResetarTexto();
+        indice = 0;
+        StartCoroutine(Digitando());
+    }
+
+    public void SetDialogo(){
+        linha1 = dialogoAceitar[Random.Range(0, dialogoAceitar.Length - 1)];
+        linha2 = dialogoEsperando[Random.Range(0, dialogoEsperando.Length - 1)];
+        linha3 = dialogoAgradecendo[Random.Range(0, dialogoAgradecendo.Length - 1)];
+    }
+
     public void ResetarTexto(){
         textoDialogo.text = "";
-        indice = 0;
         digitando = false;
         painelDialogo.SetActive(false);
-        aceitarBotao.SetActive(false);
-        rejeitarBotao.SetActive(false);
     }
 
     IEnumerator Digitando(){
         digitando = true;
-        foreach(char letter in dialogo[indice]){
+        
+        switch (indice){
+            case 0:
+                linhaAtual = linha1;
+                break;
+            case 1:
+                linhaAtual = linha2;
+                break;
+            case 2:
+                linhaAtual = linha3;
+                break;
+        }
+
+        foreach(char letter in linhaAtual){
             textoDialogo.text += letter;
             if (!digitando){
                 ResetarTexto();
@@ -69,13 +115,14 @@ public class NPCDialogo : MonoBehaviour{
         digitando = false;
     }
 
-    //Uso futuro caso exista novas linhas de dialogo.
     public void ProximaLinha(){
-        if (indice < dialogo.Length - 1){
+        if (indice < 2){
             indice++;
             textoDialogo.text = "";
+            linhaAtual = "";
             StartCoroutine(Digitando());
         } else{
+            indice = 0;
             ResetarTexto();
         }
     }

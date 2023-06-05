@@ -26,9 +26,11 @@ public class Check : MonoBehaviour{
     public List<GameObject> consumeItemsList;
     public List<ItemSO> inputItemList;
 
+    public NPCDialogo npc;
+
     private void Awake(){
-        GetRequests();
-        //DesligarQuadroPedidos();
+        //GetRequests();
+        DesligarQuadroPedidos();
     }
 
     private void Update(){
@@ -111,22 +113,22 @@ public class Check : MonoBehaviour{
             if (!collider.TryGetComponent(out ItemSOHolder itemSoHolder)) continue;
             if (!inputItemList.Contains(itemSoHolder.ItemSo)) continue;
             if (!collider.GetComponent<Cooling>().Get_Chilled()) continue;
-            
-            Debug.Log(collider.gameObject);
-            
-            inputItemList.Remove(itemSoHolder.ItemSo);
-            consumeItemsList.Add(collider.gameObject);
+
+            if (!consumeItemsList.Contains(collider.gameObject)){
+                inputItemList.Remove(itemSoHolder.ItemSo);
+                consumeItemsList.Add(collider.gameObject);
+            }
         }
     }
 
     public void VenderItens(){
         if (inputItemList.Count == 0){
             foreach (GameObject consumeItemsGameObject in consumeItemsList){
-                Debug.Log(consumeItemsList);
                 Destroy(consumeItemsGameObject);
             }
             GetRequests();
             DesligarQuadroPedidos();
+            npc.botaoVenda();
         }
     }
 
