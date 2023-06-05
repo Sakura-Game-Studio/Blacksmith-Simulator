@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Oculus Settings
   m_EditorClassIdentifier: 
   m_StereoRenderingModeDesktop: 0
-  m_StereoRenderingModeAndroid: 2
+  m_StereoRenderingModeAndroid: 0
   SharedDepthBuffer: 1
   DepthSubmission: 0
   DashSupport: 1
@@ -30,4 +30,4 @@ MonoBehaviour:
   TargetQuest: 1
   TargetQuest2: 0
   TargetQuestPro: 0
-  SystemSplashScreen: {fileID: 0}
+  SystemSplashScreen: {fileID: 2800000, guid: 823554c91d618424aa1760be22158828, type: 3}
