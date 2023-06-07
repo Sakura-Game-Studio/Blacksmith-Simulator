@@ -111,6 +111,7 @@ Library: F:\Unity\Unity Projects\Blacksmith-Simulator\Temp\StagingArea\tempburst
 --compilation-defines=ENABLE_INPUT_SYSTEM
 --compilation-defines=ENABLE_LEGACY_INPUT_MANAGER
 --compilation-defines=TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
+--compilation-defines=ENABLE_UNITYMESHSIMPLIFIER
 --compilation-defines=PACKAGE_PHYSICS
 --compilation-defines=PACKAGE_PHYSICS2D
 --compilation-defines=PACKAGE_TILEMAP
