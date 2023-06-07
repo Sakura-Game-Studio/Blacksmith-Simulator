@@ -178,6 +178,7 @@ MonoBehaviour:
   imagemCheck2: {fileID: 0}
   consumeItemsList: []
   inputItemList: []
+  npc: {fileID: 0}
 --- !u!65 &5076501
 BoxCollider:
   m_ObjectHideFlags: 0
