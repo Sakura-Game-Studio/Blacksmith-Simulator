@@ -6,7 +6,6 @@ public class Bucket : MonoBehaviour{
         var objectColision = other.gameObject;
         if (objectColision.CompareTag("Dagger") || objectColision.CompareTag("Axe") || objectColision.CompareTag("Sword")){
             objectColision.GetComponent<Cooling>().OnBucket();
-            Debug.Log("No Balde");
         }
     }
 
@@ -14,7 +13,6 @@ public class Bucket : MonoBehaviour{
         var objectColision = other.gameObject;
         if (objectColision.CompareTag("Dagger") || objectColision.CompareTag("Axe") || objectColision.CompareTag("Sword")){
             objectColision.GetComponent<Cooling>().OffBucket();
-            Debug.Log("Saiu do Balde");
         }
     }
 }

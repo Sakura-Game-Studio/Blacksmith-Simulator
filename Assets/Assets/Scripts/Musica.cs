@@ -5,8 +5,9 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Musica : MonoBehaviour{
-    public AudioClip musica1, musica2, musica3;
     public AudioSource audioSource;
+    public AudioClip musica1, musica2, musica3;
+    
 
     private int numeroMusica, numeroAnterior;
 

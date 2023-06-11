@@ -103,7 +103,7 @@ public class Check : MonoBehaviour{
     public void ChecarItensBancada(){
         Collider[] colliderArray = Physics.OverlapBox(
             transform.position + checkAreaBoxCollider.center, 
-            checkAreaBoxCollider.size / 2,
+            checkAreaBoxCollider.size,
             checkAreaBoxCollider.transform.rotation);
         
         inputItemList = new List<ItemSO>(itemsToCheck);
@@ -113,6 +113,8 @@ public class Check : MonoBehaviour{
             if (!collider.TryGetComponent(out ItemSOHolder itemSoHolder)) continue;
             if (!inputItemList.Contains(itemSoHolder.ItemSo)) continue;
             if (!collider.GetComponent<Cooling>().Get_Chilled()) continue;
+            
+            Debug.Log(collider);
 
             if (!consumeItemsList.Contains(collider.gameObject)){
                 inputItemList.Remove(itemSoHolder.ItemSo);
