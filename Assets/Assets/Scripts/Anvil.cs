@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Net.Mime;
 using HurricaneVR.Framework.Core.Utils;
 using TMPro;
 using UnityEngine;
@@ -16,6 +17,10 @@ public class Anvil : MonoBehaviour {
 
     public TMP_Text textoReceita;
     public Image imagemReceita;
+
+    public GameObject selecaoAdaga;
+    public GameObject selecaoMachado;
+    public GameObject selecaoEspada;
     
     public HVRObjectCollisionDisablerParent disabler;
 
@@ -34,6 +39,25 @@ public class Anvil : MonoBehaviour {
 
         textoReceita.text = _craftingRecipeSO.name;
         imagemReceita.sprite = _craftingRecipeSO.recipeSprite;
+
+        switch (_craftingRecipeSO.name){
+            case "Adaga":
+                selecaoAdaga.SetActive(true);
+                selecaoMachado.SetActive(false);
+                selecaoEspada.SetActive(false);
+                break;
+            case "Machado":
+                selecaoAdaga.SetActive(false);
+                selecaoMachado.SetActive(true);
+                selecaoEspada.SetActive(false);
+                break;
+            case "Espada":
+                selecaoAdaga.SetActive(false);
+                selecaoMachado.SetActive(false);
+                selecaoEspada.SetActive(true);
+                break;
+        }
+
         
         _totalHits = _craftingRecipeSO.totalHits;
         //_recipeImage.sprite = _craftingRecipeSO.recipeSprite;
