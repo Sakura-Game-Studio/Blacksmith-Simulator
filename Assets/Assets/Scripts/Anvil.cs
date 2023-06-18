@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using HurricaneVR.Framework.Core.Utils;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -15,6 +16,8 @@ public class Anvil : MonoBehaviour {
 
     public TMP_Text textoReceita;
     public Image imagemReceita;
+    
+    public HVRObjectCollisionDisablerParent disabler;
 
     private void Awake() {
         NextRecipe();
@@ -37,7 +40,6 @@ public class Anvil : MonoBehaviour {
     }
 
     public void CraftRecipe(){
-        Debug.Log("Craft");
         Collider[] colliderArray = Physics.OverlapBox(
             transform.position + craftAreaBoxCollider.center, 
             craftAreaBoxCollider.size,
@@ -60,10 +62,12 @@ public class Anvil : MonoBehaviour {
             }
             if(_totalHits == 0){
                 _totalHits = _craftingRecipeSO.totalHits;
-                Instantiate(_craftingRecipeSO.outputItemSO.prefab, itemSpawnPoint.position, itemSpawnPoint.rotation);
+                GameObject novoObjeto = Instantiate(_craftingRecipeSO.outputItemSO.prefab, itemSpawnPoint.position, itemSpawnPoint.rotation);
+                
+                //disabler.Transforms.Add(novoObjeto.transform);
                 
                 foreach (GameObject consumeItemsGameObject in consumeItemsList){
-                    Destroy(consumeItemsGameObject);
+                    Destroy(consumeItemsGameObject.transform.parent.gameObject);
                 }
             }
         }

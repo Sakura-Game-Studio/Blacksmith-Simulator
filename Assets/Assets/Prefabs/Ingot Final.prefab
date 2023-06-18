@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2641227549992084430}
   - component: {fileID: 2641227549992084431}
   - component: {fileID: 2641227549992084424}
+  - component: {fileID: -4899797421457480871}
   m_Layer: 0
   m_Name: Ingot Final
   m_TagString: Ingot
@@ -199,6 +200,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee8c5b6058b24b4469f5ea9527121137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anvil: {fileID: 0}
+--- !u!114 &-4899797421457480871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2641227549992084466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4cb69a3046439c9baf9e8d073e9ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TriggersOnly: 0
+  IncludeTriggers: 0
+  Transforms: []
 --- !u!1 &2641227551027574524
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,6 +490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e32a207c55ac3e4bbc3e2ac60307c89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _heated: 0
 --- !u!114 &2641227550551285151
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,4 +7,6 @@ public class Castor : MonoBehaviour{
 
     [SerializeField] private List<ItemSO> itensGaveta;
     
+    public FMODUnity.EventReference MyEvent;
+
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using FMODUnity;
 using HurricaneVR.Framework.Core.ScriptableObjects;
 using HurricaneVR.Framework.Core.Utils;
 using HurricaneVR.Framework.Shared;
@@ -27,8 +28,6 @@ namespace HurricaneVR.Framework.Components
         [Tooltip("Damper of the joint")]
         public float Damper = 50f;
 
-
-
         [Header("Button Positions")]
         [Tooltip("How far the button must travel to become pressed.")]
         public float DownThreshold;
@@ -45,8 +44,14 @@ namespace HurricaneVR.Framework.Components
 
 
         [Header("SFX")]
-        public AudioClip SFXButtonDown;
-        public AudioClip SFXButtonUp;
+        //public AudioClip SFXButtonDown;
+        //public AudioClip SFXButtonUp;
+        
+        public EventReference  SFXButtonDown;
+        private FMOD.Studio.EventInstance sfxButtonDownInstance;
+        
+        public EventReference SFXButtonUp;
+        private FMOD.Studio.EventInstance sfxButtonUpInstance;
 
         public HVRButtonEvent ButtonDown = new HVRButtonEvent();
         public HVRButtonEvent ButtonUp = new HVRButtonEvent();
@@ -70,6 +75,11 @@ namespace HurricaneVR.Framework.Components
             _axis = Axis.GetVector();
             Rigidbody.useGravity = false;
             SetupJoint();
+            
+            sfxButtonDownInstance = FMODUnity.RuntimeManager.CreateInstance(SFXButtonDown);
+            sfxButtonDownInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, GetComponent<Rigidbody>()));
+            sfxButtonUpInstance = FMODUnity.RuntimeManager.CreateInstance(SFXButtonUp);
+            sfxButtonUpInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, GetComponent<Rigidbody>()));
         }
 
         private void SetupJoint()
@@ -172,22 +182,16 @@ namespace HurricaneVR.Framework.Components
             return 0f;
         }
 
-        protected virtual void OnButtonDown()
-        {
-            if (SFXButtonDown)
-            {
-                if(SFXPlayer.Instance) SFXPlayer.Instance.PlaySFX(SFXButtonDown, transform.position);
-            }
+        protected virtual void OnButtonDown(){
+            sfxButtonDownInstance.start();
 
             ButtonDown.Invoke(this);
         }
 
         protected virtual void OnButtonUp()
         {
-            if (SFXButtonUp)
-            {
-                if(SFXPlayer.Instance) SFXPlayer.Instance.PlaySFX(SFXButtonUp, transform.position);
-            }
+            sfxButtonUpInstance.start();
+            
             ButtonUp.Invoke(this);
         }
     }

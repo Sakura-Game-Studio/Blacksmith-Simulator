@@ -1,0 +1,485 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8683049184490518586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../Downloads/FMOD - Blacksmith VR/Blacksmith midleware/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638226470372212166
+  FileSizes:
+  - Name: Desktop
+    Value: 7808128
+  Exists: 1
+--- !u!114 &-8555499107557507367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sons Novos/SFX Congrats
+  m_EditorClassIdentifier: 
+  Path: event:/Sons Novos/SFX Congrats
+  Guid:
+    Data1: 262510602
+    Data2: 1151816775
+    Data3: 1523943832
+    Data4: 1805461861
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 2
+  Length: 1688
+--- !u!114 &-8517152692204427996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sons Novos/Ferro quente esfriando 1
+  m_EditorClassIdentifier: 
+  Path: event:/Sons Novos/Ferro quente esfriando 1
+  Guid:
+    Data1: 975442608
+    Data2: 1304049417
+    Data3: -1946717261
+    Data4: 215135056
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 5
+  Length: 2039
+--- !u!114 &-5774607828511836270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Marteladas
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Marteladas
+  Guid:
+    Data1: 189322036
+    Data2: 1340662606
+    Data3: 1250199465
+    Data4: 1927570740
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 2
+  Length: 2000
+--- !u!114 &-4977375746518269697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../../Downloads/FMOD - Blacksmith VR/Blacksmith midleware/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638226470372232552
+  FileSizes:
+  - Name: Desktop
+    Value: 1442
+  Exists: 1
+--- !u!114 &-4509681086929005852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Passos
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Passos
+  Guid:
+    Data1: 374001938
+    Data2: 1137005493
+    Data3: -45078593
+    Data4: -2012696221
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 2
+  Length: 2000
+--- !u!114 &-3545394646599794395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sons Novos/Ferro quente esfriando 3
+  m_EditorClassIdentifier: 
+  Path: event:/Sons Novos/Ferro quente esfriando 3
+  Guid:
+    Data1: 1398240074
+    Data2: 1338156404
+    Data3: 776540094
+    Data4: 1225491972
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 5
+  Length: 1575
+--- !u!114 &-2836559158887028642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sons Novos/Impacto martelo 1
+  m_EditorClassIdentifier: 
+  Path: event:/Sons Novos/Impacto martelo 1
+  Guid:
+    Data1: -1481942195
+    Data2: 1149185614
+    Data3: -319756896
+    Data4: -2063667764
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 5
+  Length: 420
+--- !u!114 &-2046375429982774740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Encaixe
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Encaixe
+  Guid:
+    Data1: 1180537661
+    Data2: 1154244823
+    Data3: 1314102203
+    Data4: 1144755774
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 2
+  Length: 2000
+--- !u!114 &-1259070388159848807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Lamina Afiada
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Lamina Afiada
+  Guid:
+    Data1: 1382254306
+    Data2: 1131967960
+    Data3: 616589718
+    Data4: -1970586454
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 2
+  Length: 513
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -4977375746518269697}
+  - {fileID: -8683049184490518586}
+  EditorEvents:
+  - {fileID: 1621677493326841437}
+  - {fileID: -8555499107557507367}
+  - {fileID: -4509681086929005852}
+  - {fileID: -5774607828511836270}
+  - {fileID: 8276936357898929182}
+  - {fileID: -2046375429982774740}
+  - {fileID: -3545394646599794395}
+  - {fileID: -2836559158887028642}
+  - {fileID: 1830877683166254845}
+  - {fileID: 6482707061827917822}
+  - {fileID: -8517152692204427996}
+  - {fileID: 7644671708274450353}
+  - {fileID: -1259070388159848807}
+  - {fileID: 1454665481714530912}
+  - {fileID: 2272239919143242727}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: -8683049184490518586}
+  StringsBanks:
+  - {fileID: -4977375746518269697}
+  cacheTime: 638226470372232552
+  cacheVersion: 131603
+--- !u!114 &1454665481714530912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Posicionar Item
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Posicionar Item
+  Guid:
+    Data1: 1382880999
+    Data2: 1288418479
+    Data3: 117349298
+    Data4: -1232369436
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 2
+  Length: 422
+--- !u!114 &1621677493326841437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sons Novos/Aceitar pedido 2
+  m_EditorClassIdentifier: 
+  Path: event:/Sons Novos/Aceitar pedido 2
+  Guid:
+    Data1: 1937475328
+    Data2: 1328728174
+    Data3: 1426846594
+    Data4: -1904647466
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 2
+  Length: 327
+--- !u!114 &1830877683166254845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sons Novos/Aceitar pedido 1
+  m_EditorClassIdentifier: 
+  Path: event:/Sons Novos/Aceitar pedido 1
+  Guid:
+    Data1: -2127895986
+    Data2: 1278606079
+    Data3: -378243922
+    Data4: 2032996458
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 2
+  Length: 327
+--- !u!114 &2272239919143242727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Musicas
+  m_EditorClassIdentifier: 
+  Path: event:/Musicas
+  Guid:
+    Data1: 1440153327
+    Data2: 1249405521
+    Data3: 2142301867
+    Data4: 91108619
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 506000
+--- !u!114 &6482707061827917822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sons Novos/SFX BUY
+  m_EditorClassIdentifier: 
+  Path: event:/Sons Novos/SFX BUY
+  Guid:
+    Data1: -504644264
+    Data2: 1260441956
+    Data3: -467693663
+    Data4: -1635028126
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 7.8
+  Length: 1680
+--- !u!114 &7644671708274450353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Gold
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Gold
+  Guid:
+    Data1: -706845996
+    Data2: 1153692008
+    Data3: 144804000
+    Data4: -879333548
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 2
+  Length: 2000
+--- !u!114 &8276936357898929182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sons Novos/Brasa
+  m_EditorClassIdentifier: 
+  Path: event:/Sons Novos/Brasa
+  Guid:
+    Data1: -1860772037
+    Data2: 1091511172
+    Data3: -1576374594
+    Data4: 1738345550
+  Banks:
+  - {fileID: -8683049184490518586}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0.90000004
+  MaxDistance: 40
+  Length: 14452

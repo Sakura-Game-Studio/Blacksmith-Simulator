@@ -8,7 +8,7 @@ public class Computer : MonoBehaviour {
     public List<Sprite> prefabsImages;
     public Image imageComputer;
     [FormerlySerializedAs("prefab")] public GameObject prefabAtual;
-    
+
     private int _contador = 0;
 
     private void Start() {

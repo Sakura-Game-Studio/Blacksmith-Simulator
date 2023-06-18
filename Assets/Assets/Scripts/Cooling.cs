@@ -56,4 +56,8 @@ public class Cooling : MonoBehaviour{
     public bool Get_Chilled(){
         return _chilled;
     }
+
+    public float Get_Timer(){
+        return _timer;
+    }
 }

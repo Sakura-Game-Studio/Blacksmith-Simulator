@@ -27,9 +27,14 @@ public class Check : MonoBehaviour{
     public List<ItemSO> inputItemList;
 
     public NPCDialogo npc;
+    
+    public FMODUnity.EventReference checkButton;
+    private FMOD.Studio.EventInstance checkButtonInstance;
 
     private void Awake(){
-        //GetRequests();
+        checkButtonInstance = FMODUnity.RuntimeManager.CreateInstance(checkButton);
+        //checkButtonInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, GetComponent<Rigidbody>()));
+        
         DesligarQuadroPedidos();
     }
 
@@ -128,6 +133,8 @@ public class Check : MonoBehaviour{
             foreach (GameObject consumeItemsGameObject in consumeItemsList){
                 Destroy(consumeItemsGameObject);
             }
+
+            checkButtonInstance.start();
             GetRequests();
             DesligarQuadroPedidos();
             npc.botaoVenda();

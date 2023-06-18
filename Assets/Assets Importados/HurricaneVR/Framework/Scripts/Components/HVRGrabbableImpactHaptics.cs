@@ -1,4 +1,5 @@
 ﻿using HurricaneVR.Framework.Core;
+using UnityEngine;
 
 namespace HurricaneVR.Framework.Components
 {
@@ -6,10 +7,15 @@ namespace HurricaneVR.Framework.Components
     public class HVRGrabbableImpactHaptics : HVRImpactHapticsBase
     {
         public HVRGrabbable Grabbable;
+        
+        public FMODUnity.EventReference somImpacto;
+        private FMOD.Studio.EventInstance somImpactoInstance;
 
         protected override void Awake()
         {
             base.Awake();
+            somImpactoInstance = FMODUnity.RuntimeManager.CreateInstance(somImpacto);
+            somImpactoInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, GetComponent<Rigidbody>()));
 
             if (!Grabbable) TryGetComponent(out Grabbable);
         }
@@ -22,6 +28,13 @@ namespace HurricaneVR.Framework.Components
                 if (!h.IsMine) break;
 
                 h.Controller.Vibrate(amplitude, Data.Duration, Data.Frequency);
+                
+                Debug.Log("Katiau");
+                
+                if (somImpactoInstance.isValid()){
+                    
+                    somImpactoInstance.start();
+                }
             }
         }
     }
