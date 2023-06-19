@@ -15,9 +15,6 @@ public class Anvil : MonoBehaviour {
     private CraftingRecipeSO _craftingRecipeSO;
     private int _totalHits;
 
-    public TMP_Text textoReceita;
-    public Image imagemReceita;
-
     public GameObject selecaoAdaga;
     public GameObject selecaoMachado;
     public GameObject selecaoEspada;
@@ -37,9 +34,6 @@ public class Anvil : MonoBehaviour {
             _craftingRecipeSO = craftingRecipeSoList[index];
         }
 
-        textoReceita.text = _craftingRecipeSO.name;
-        imagemReceita.sprite = _craftingRecipeSO.recipeSprite;
-
         switch (_craftingRecipeSO.name){
             case "Adaga":
                 selecaoAdaga.SetActive(true);
@@ -57,10 +51,8 @@ public class Anvil : MonoBehaviour {
                 selecaoEspada.SetActive(true);
                 break;
         }
-
         
         _totalHits = _craftingRecipeSO.totalHits;
-        //_recipeImage.sprite = _craftingRecipeSO.recipeSprite;
     }
 
     public void CraftRecipe(){
@@ -86,10 +78,8 @@ public class Anvil : MonoBehaviour {
             }
             if(_totalHits == 0){
                 _totalHits = _craftingRecipeSO.totalHits;
-                GameObject novoObjeto = Instantiate(_craftingRecipeSO.outputItemSO.prefab, itemSpawnPoint.position, itemSpawnPoint.rotation);
-                
-                //disabler.Transforms.Add(novoObjeto.transform);
-                
+                Instantiate(_craftingRecipeSO.outputItemSO.prefab, itemSpawnPoint.position, itemSpawnPoint.rotation);
+
                 foreach (GameObject consumeItemsGameObject in consumeItemsList){
                     Destroy(consumeItemsGameObject.transform.parent.gameObject);
                 }
@@ -106,7 +96,7 @@ public class Anvil : MonoBehaviour {
         }
     }
 
-    private void OnTriggerStay(Collider other){
+    /*private void OnTriggerStay(Collider other){
         Collider[] colliderArray = Physics.OverlapBox(
             transform.position + craftAreaBoxCollider.center, 
             craftAreaBoxCollider.size,
@@ -117,5 +107,5 @@ public class Anvil : MonoBehaviour {
                 CraftRecipe();
             }
         }
-    }
+    }*/
 }

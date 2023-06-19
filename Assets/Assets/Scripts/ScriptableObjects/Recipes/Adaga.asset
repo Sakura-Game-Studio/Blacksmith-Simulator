@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2ec22bceadc79746857cfa73b205c26, type: 3}
   m_Name: Adaga
   m_EditorClassIdentifier: 
-  recipeSprite: {fileID: 21300000, guid: 41adb635bc81ada4bb9b3d37c0e09d10, type: 3}
+  recipeSprite: {fileID: 21300000, guid: 30155bfbe090bf340a5ff98f528ec3a1, type: 3}
   itensSOList:
   - {fileID: 11400000, guid: 1af2a52321f317a408a7562c16d97a78, type: 2}
   outputItemSO: {fileID: 11400000, guid: 16f9cf14c5d1cba40bc6f3042681bd5c, type: 2}

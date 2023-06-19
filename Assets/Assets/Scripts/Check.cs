@@ -137,7 +137,7 @@ public class Check : MonoBehaviour{
             checkButtonInstance.start();
             GetRequests();
             DesligarQuadroPedidos();
-            npc.botaoVenda();
+            //npc.botaoVenda();
         }
     }
 

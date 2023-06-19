@@ -49,18 +49,31 @@ public class NPCDialogo : MonoBehaviour{
             interacaoNPC();
         }
 
-        if (textoDialogo.text.Equals(linhaAtual) && indice == 0){
+        /*if (textoDialogo.text.Equals(linhaAtual) && indice == 0){
             aceitarBotao.SetActive(true);
         } else{
             aceitarBotao.SetActive(false);
-        }
+        }*/
     }
 
     public void interacaoNPC(){
-        ProximaLinha();
-        if(indice == 1){
-            aceitarBotao.SetActive(false);
-            check.GetRequests();
+        if (!digitando){
+            switch (indice){
+                case 0:
+                    ProximaLinha();
+                    check.GetRequests();
+                    break;
+                
+                case 1:
+                    if (check.inputItemList.Count == 0){
+                        botaoVenda();
+                        check.VenderItens();
+                    }
+                    break;
+                
+                case 2:
+                    break;
+            }
         }
     }
 
