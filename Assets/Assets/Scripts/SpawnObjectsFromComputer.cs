@@ -10,8 +10,6 @@ public class SpawnObjectsFromComputer : MonoBehaviour {
     public FMODUnity.EventReference  buyButton;
     private FMOD.Studio.EventInstance buyButtonInstance;
 
-    public HVRObjectCollisionDisablerParent disabler;
-
     private void Start(){
         buyButtonInstance = FMODUnity.RuntimeManager.CreateInstance(buyButton);
         buyButtonInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, GetComponent<Rigidbody>()));
@@ -23,6 +21,5 @@ public class SpawnObjectsFromComputer : MonoBehaviour {
         buyButtonInstance.start();
         
         GameObject novoObjeto = Instantiate(prefab, posicao, Quaternion.identity);
-        //disabler.Transforms.Add(novoObjeto.transform);
     }
 }

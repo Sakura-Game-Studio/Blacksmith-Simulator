@@ -13,7 +13,7 @@ namespace HurricaneVR.Framework.Core.Utils
 
         void Awake()
         {
-            Transforms.Add(FindObjectOfType<HVRPlayerController>().transform.parent.transform);
+            Transforms.Add(FindObjectOfType<HVRPlayerController>().transform);
             Transforms.Add(gameObject.transform);
             foreach (var t in Transforms)
             {
